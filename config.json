@@ -1,0 +1,62 @@
+{
+    "system": {
+        "name": "Enhanced ATM Simulator",
+        "version": "2.0.0",
+        "environment": "development"
+    },
+    "security": {
+        "session_timeout": 300,
+        "max_login_attempts": 3,
+        "password_min_length": 6,
+        "pin_length": 4,
+        "encryption_algorithm": "AES-256",
+        "hash_algorithm": "SHA-256"
+    },
+    "banking": {
+        "daily_withdrawal_limit": 1000.00,
+        "daily_transfer_limit": 5000.00,
+        "minimum_balance": {
+            "checking": 0.00,
+            "savings": 25.00,
+            "premium": 100.00
+        },
+        "overdraft_limit": {
+            "checking": 100.00,
+            "savings": 0.00,
+            "premium": 500.00
+        },
+        "transaction_fees": {
+            "checking": 0.00,
+            "savings": 1.00,
+            "premium": 0.00
+        }
+    },
+    "currencies": {
+        "default": "USD",
+        "supported": ["USD", "EUR", "GBP", "CAD", "AUD"]
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "atm_system.log",
+        "max_file_size": "10MB",
+        "backup_count": 5
+    },
+    "database": {
+        "type": "file",
+        "path": "atm_data.json",
+        "backup_interval": 3600,
+        "auto_backup": true
+    },
+    "ui": {
+        "language": "en",
+        "currency_symbol": "$",
+        "date_format": "%Y-%m-%d %H:%M:%S",
+        "decimal_places": 2
+    },
+    "alerts": {
+        "low_balance_threshold": 50.00,
+        "large_transaction_threshold": 1000.00,
+        "enable_email_notifications": false,
+        "enable_sms_notifications": false
+    }
+}

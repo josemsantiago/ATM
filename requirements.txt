@@ -1,0 +1,23 @@
+# ATM Simulator Dependencies
+# Python 3.7+ required
+
+# Core dependencies - none required for basic functionality
+# All required modules are part of Python standard library
+
+# Optional development dependencies
+pytest>=6.0.0              # For running tests
+pytest-cov>=2.10.0         # For test coverage reports
+black>=21.0.0               # Code formatting
+flake8>=3.8.0               # Code linting
+mypy>=0.800                 # Type checking
+
+# Optional security enhancements
+cryptography>=3.4.0        # Enhanced encryption support
+bcrypt>=3.2.0               # Password hashing
+
+# Optional database support
+sqlite3                     # Database persistence (built-in)
+
+# Development tools (optional)
+pre-commit>=2.10.0          # Git hooks for code quality
+bandit>=1.7.0               # Security linting
