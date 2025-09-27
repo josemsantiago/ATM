@@ -83,7 +83,7 @@ source atm_env/bin/activate  # On Windows: atm_env\Scripts\activate
 ### Quick Start
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/josemsantiago/ATM.git
 cd ATM
 
 # Install dependencies (if any)
@@ -262,7 +262,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **José Santiago Echevarria**
 - Email: jose.santiago.echevarria@outlook.com
-- LinkedIn: [linkedin.com/in/jose-santiago-echevarria](https://linkedin.com/in/jose-santiago-echevarria)
+- LinkedIn: [linkedin.com/in/jmsechevarria](https://linkedin.com/in/jmsechevarria)
 - GitHub: [github.com/josemsantiago](https://github.com/josemsantiago)
 
 ### Special Thanks
