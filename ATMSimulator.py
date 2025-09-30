@@ -39,32 +39,46 @@ class BankUser(User):
         self._balance = balance
 
     def withdraw(self, amount):
+        if amount < 0:
+            raise ValueError("Withdrawal amount cannot be negative")
+        if amount > self._balance:
+            raise ValueError("Insufficient funds")
         self._balance -= amount
+        return True
 
     def deposit(self, amount):
+        if amount < 0:
+            raise ValueError("Deposit amount cannot be negative")
         self._balance += amount
+        return True
 
     def transfer_money(self, amount,user):
         print(f"You are transfering ${float(amount):0,.2f} to {user.get_name()}\nAuthentication Required")
         if self.get_pin() != input("Enter your PIN: "):
             print("Invalid PIN. Transaction Canceled")
-        else: 
-            print("Transfer Authorized")
-            self.withdraw(amount)
-            user.deposit(amount)
-            print(f"Transfering ${float(amount):0,.2f} to {user.get_name()} ")
+        else:
+            try:
+                print("Transfer Authorized")
+                self.withdraw(amount)
+                user.deposit(amount)
+                print(f"Transfering ${float(amount):0,.2f} to {user.get_name()} ")
+            except ValueError as e:
+                print(f"Transfer failed: {e}")
 
     def request_money(self,amount,user):
         print(f"You are requesting ${float(amount):0,.2f} from {user.get_name()}\nUser authentication is required")
         if user.get_pin() != input(f"Enter {user.get_name()}'s PIN: "):
             print("Invalid PIN. Transaction Canceled")
-        else: 
+        else:
             if self.get_password() != input("Enter your password: "):
                  print("Invalid password. Transaction Canceled")
-            else: 
-                print("Request Authorized")
-                user.withdraw(amount)
-                self.deposit(amount)
+            else:
+                try:
+                    print("Request Authorized")
+                    user.withdraw(amount)
+                    self.deposit(amount)
+                except ValueError as e:
+                    print(f"Request failed: {e}")
 
 
 

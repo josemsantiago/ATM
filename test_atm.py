@@ -62,8 +62,9 @@ class TestBankUser(unittest.TestCase):
     def test_deposit_negative_amount(self):
         """Test deposit with negative amount (should be rejected)"""
         initial_balance = self.bank_user.get_balance()
-        # Assuming deposit method should handle negative amounts gracefully
-        self.bank_user.deposit(-50.0)
+        # Deposit method should raise ValueError for negative amounts
+        with self.assertRaises(ValueError):
+            self.bank_user.deposit(-50.0)
         # Balance should remain unchanged
         self.assertEqual(self.bank_user.get_balance(), initial_balance)
 
@@ -77,7 +78,9 @@ class TestBankUser(unittest.TestCase):
     def test_withdraw_insufficient_funds(self):
         """Test withdrawal with insufficient funds"""
         initial_balance = self.bank_user.get_balance()
-        self.bank_user.withdraw(1000.0)  # Amount larger than balance
+        # Withdraw method should raise ValueError for insufficient funds
+        with self.assertRaises(ValueError):
+            self.bank_user.withdraw(1000.0)  # Amount larger than balance
         # Balance should remain unchanged if withdrawal fails
         self.assertEqual(self.bank_user.get_balance(), initial_balance)
 
@@ -85,7 +88,9 @@ class TestBankUser(unittest.TestCase):
         """Test withdrawal with negative amount"""
         self.bank_user.deposit(100.0)
         initial_balance = self.bank_user.get_balance()
-        self.bank_user.withdraw(-25.0)
+        # Withdraw method should raise ValueError for negative amounts
+        with self.assertRaises(ValueError):
+            self.bank_user.withdraw(-25.0)
         # Balance should remain unchanged
         self.assertEqual(self.bank_user.get_balance(), initial_balance)
 
