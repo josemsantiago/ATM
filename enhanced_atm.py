@@ -74,7 +74,9 @@ class SecurityManager:
 
     def hash_password(self, password: str) -> str:
         """Hash password with salt"""
-        salt = "atm_security_salt_2023"
+        # Load salt from environment variable for security
+        # If not set, use a default (NOT recommended for production)
+        salt = os.environ.get('ATM_SECURITY_SALT', 'atm_security_salt_2023')
         return hashlib.sha256((password + salt).encode()).hexdigest()
 
     def verify_password(self, password: str, hashed: str) -> bool:
