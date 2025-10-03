@@ -2,10 +2,14 @@
 ### Professional Banking System Simulation
 
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Code Style](https://img.shields.io/badge/Code%20Style-PEP%208-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 
 A sophisticated console-based ATM (Automated Teller Machine) simulation that demonstrates advanced object-oriented programming principles, secure banking operations, and professional software architecture.
+
+## 📸 Screenshots
+
+> **Note:** Console interface screenshots will be added soon. Run `python run_atm.py` or `python enhanced_atm.py` to experience the ATM simulation.
 
 ## 🏦 Overview
 
@@ -253,6 +257,10 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## 📸 Screenshots
+
+> **Note:** Screenshots will be added soon. To see the ATM simulator in action, run `python ATMSimulator.py` and follow the on-screen prompts.
 
 ## 📄 License
 
